@@ -7,9 +7,8 @@ car_data = pd.read_csv('vehicles_us.csv')  # leer los datos
 # poner un encabezado
 st.header('Aplicación de Visualización de Datos de Venta de Vehículos')
 
-# crear casillas de verificación para histograma y gráfico de dispersión
+# crear casilla de verificación para histograma
 build_histogram = st.checkbox('Construir un histograma')
-build_scatter = st.checkbox('Construir un gráfico de dispersión')
 
 # si la casilla de verificación para el histograma está seleccionada
 if build_histogram:
@@ -19,6 +18,9 @@ if build_histogram:
     fig_hist = px.histogram(car_data, x="odometer")
     # mostrar un gráfico Plotly interactivo
     st.plotly_chart(fig_hist, use_container_width=True)
+
+# crear casilla de verificación para histograma
+build_scatter = st.checkbox('Construir un gráfico de dispersión')
 
 # si la casilla de verificación para el gráfico de dispersión está seleccionada
 if build_scatter:
